@@ -102,7 +102,6 @@ select {
 	--drk-pink: #c56cb6;
 	--pink: #ff7582;
 	--blue: #355c7d;
-	--rotate: 0deg;
 }
 
 main {
@@ -275,7 +274,7 @@ main {
 	/* border-radius: 100% 5px 5px 100%; */
 	bottom: 50%;
 	left: 50%;
-	transform: translatex(-50%) rotate(var(--rotate));
+	transform: translatex(-50%);
 	transform-origin: bottom;
 	position: absolute;
 	box-shadow: 0 0 10px #24272f;
@@ -289,7 +288,7 @@ main {
 	/* border-radius: 100% 5px 5px 100%; */
 	bottom: 50%;
 	left: 50%;
-	transform: translatex(-50%) rotate(var(--rotate));
+	transform: translatex(-50%);
 	transform-origin: bottom;
 	position: absolute;
 	box-shadow: 0 0 10px #24272f;
@@ -302,7 +301,7 @@ main {
 	/* border-radius: 100% 5px 5px 100%; */
 	bottom: 50%;
 	left: 50%;
-	transform: translatex(-50%) rotate(var(--rotate));
+	transform: translatex(-50%);
 	transform-origin: bottom;
 	position: absolute;
 	box-shadow: 0 0 10px #24272f;
@@ -317,7 +316,19 @@ main {
 	position: absolute;
 	bottom: 47%;
 	left: 50%;
-	transform: translatex(-50%) rotate(var(--rotation));
+	transform: translatex(-50%);
 	z-index: 50;
 	/* opacity: 0.2; */
+}
+.period {
+	color: var(--orange);
+	position: absolute;
+	font-size: 6rem;
+	font-family: "Overpass Mono", monospace;
+	font-weight: 700;
+	bottom: 36%;
+	left: 70%;
+
+	transform: translate(-70%, -36%);
+	color: var(--pink);
 }
