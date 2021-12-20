@@ -8,23 +8,24 @@ let clockFunction = () => {
 	// if military time subtract 12 hours else display current hour
 	const hour = new Date().getHours();
 	hour > 12
-		? (clockHours.innerHTML = hour - 12)
-		: (clockHours.innerHTML = hour);
+		? (clockHours.textContent = hour - 12)
+		: (clockHours.textContent = hour);
 	// If clock is between 12 hundred hours and less than 2300 hours
 	// display Pm / else display Am
 	hour > 12 || hour < 24
-		? (clockAmPm.innerHTML = "pm")
-		: (clockAmPm.innerHTML = "am");
+		? (clockAmPm.textContent = "pm")
+		: (clockAmPm.textContent = "am");
 	// get and display current minutes
 	// apparently single digit numbers are only single digits(no zero)
 	// so if minutes are less than 10 add a 0 to the front
 	const minutes = new Date().getMinutes();
 	minutes < 10
-		? (clockMinutes.innerHTML = `0${minutes}`)
-		: (clockMinutes.innerHTML = minutes);
+		? (clockMinutes.textContent = `0${minutes}`)
+		: (clockMinutes.textContent = minutes);
 
 	// Create slide animation
-	minutes.classList.add(".slide");
+
+	// minutes.classList.add(".slide");
 
 	// console.log(`${hour}:${minutes} PM`);
 

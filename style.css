@@ -90,12 +90,19 @@ select {
 	}
 }
 /* ########## END GLOBAL ########## */
+/* purp2-border, drkpink min hand */
+/* pink hour hand, blue second hand */
 :root {
 	--purple: #582841;
 	--pumpkin: #ef4648;
 	--orange: #f36f38;
 	--muted-yellow: #f99e4c;
 	--red: #cc2a49;
+	--purple2: #725a7a;
+	--drk-pink: #c56cb6;
+	--pink: #ff7582;
+	--blue: #355c7d;
+	--rotate: 0deg;
 }
 
 main {
@@ -171,4 +178,146 @@ main {
 	font-size: 6rem;
 	font-family: "Overpass Mono", monospace;
 	font-weight: 700;
+}
+
+/* ########## ANALOG CLOCK ########## */
+.clock2 {
+	width: 550px;
+	height: 550px;
+	border-radius: 5%;
+	/* border: 7px solid var(--purple2); */
+	border: 12px solid #24272f;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #242a38;
+	/* background: var(--purple); */
+	box-shadow: 0 0 10px #24272f;
+}
+.clock2__face {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: #494c5750;
+	position: relative;
+}
+.clock2__face::after {
+	display: none;
+	content: "";
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	background: #4245506e;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* add numbers and figure out how to rotate them. */
+
+.clock2__face .number {
+	/* create a rotation variable */
+	--rotation: 0;
+	position: absolute;
+	/* create a big box for the numbers and just rotate the box */
+	width: 100%;
+	height: 100%;
+	/* background: aquamarine; */
+	text-align: center;
+	font-family: "Sora", sans-serif;
+	font-size: 3rem;
+	color: rgba(255, 255, 255, 0.897);
+	transform: rotate(var(--rotation));
+	text-shadow: 2px 2px #1e2027d0;
+}
+
+/* 360/12 is 30 - so rotate numbers 30deg */
+.clock2__face .number1 {
+	--rotation: 30deg;
+}
+.clock2__face .number2 {
+	--rotation: 60deg;
+}
+.clock2__face .number3 {
+	--rotation: 90deg;
+}
+.clock2__face .number4 {
+	--rotation: 120deg;
+}
+.clock2__face .number5 {
+	--rotation: 150deg;
+}
+.clock2__face .number6 {
+	--rotation: 180deg;
+}
+.clock2__face .number7 {
+	--rotation: 210deg;
+}
+.clock2__face .number8 {
+	--rotation: 240deg;
+}
+.clock2__face .number9 {
+	--rotation: 270deg;
+}
+.clock2__face .number10 {
+	--rotation: 300deg;
+}
+.clock2__face .number11 {
+	--rotation: 330deg;
+}
+
+.hh {
+	width: 14px;
+	height: 165px;
+	background: var(--red);
+	/* border-radius: 100% 5px 5px 100%; */
+	bottom: 50%;
+	left: 50%;
+	transform: translatex(-50%) rotate(var(--rotate));
+	transform-origin: bottom;
+	position: absolute;
+	box-shadow: 0 0 10px #24272f;
+	z-index: 33;
+	/* opacity: 0.2; */
+}
+.mh {
+	width: 11px;
+	height: 220px;
+	background: var(--purple);
+	/* border-radius: 100% 5px 5px 100%; */
+	bottom: 50%;
+	left: 50%;
+	transform: translatex(-50%) rotate(var(--rotate));
+	transform-origin: bottom;
+	position: absolute;
+	box-shadow: 0 0 10px #24272f;
+	z-index: 32;
+}
+.sh {
+	width: 7px;
+	height: 245px;
+	background: var(--muted-yellow);
+	/* border-radius: 100% 5px 5px 100%; */
+	bottom: 50%;
+	left: 50%;
+	transform: translatex(-50%) rotate(var(--rotate));
+	transform-origin: bottom;
+	position: absolute;
+	box-shadow: 0 0 10px #24272f;
+	z-index: 31;
+}
+.dot {
+	--rotation: 0;
+	width: 40px;
+	height: 40px;
+	background: var(--red);
+	border-radius: 50%;
+	position: absolute;
+	bottom: 47%;
+	left: 50%;
+	transform: translatex(-50%) rotate(var(--rotation));
+	z-index: 50;
+	/* opacity: 0.2; */
 }
